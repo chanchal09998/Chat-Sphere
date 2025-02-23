@@ -22,7 +22,7 @@ const CreateGroupComponent = ({ setCreateGroup, currentUser }) => {
   const searchUsersFunc = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/search-application-users-for-group",
+        "https://chat-sphere-6khc.onrender.com/api/search-application-users-for-group",
         { searchQuery: searchInput, userId: currentUser._id }
       );
 
@@ -91,7 +91,7 @@ const CreateGroupComponent = ({ setCreateGroup, currentUser }) => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/create-group",
+        "https://chat-sphere-6khc.onrender.com/api/create-group",
         groupData
       );
 

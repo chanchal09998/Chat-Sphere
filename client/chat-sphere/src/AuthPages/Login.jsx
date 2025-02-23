@@ -24,10 +24,13 @@ const Login = () => {
       setLoading(true); // Set loading state
 
       // Call the API to validate the login
-      const response = await axios.post("http://localhost:8080/api/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://chat-sphere-6khc.onrender.com/api/login",
+        {
+          email,
+          password,
+        }
+      );
 
       // Handle the success response
 

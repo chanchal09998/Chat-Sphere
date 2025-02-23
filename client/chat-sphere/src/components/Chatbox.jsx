@@ -41,7 +41,7 @@ const Chatbox = ({ setCreateGroup }) => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/fetch-chat-messages",
+        "https://chat-sphere-6khc.onrender.com/api/fetch-chat-messages",
         {
           sender,
           receiver: receiver._id,

@@ -24,7 +24,7 @@ const Sidebar = ({ openChatHandler }) => {
   const searchUsersFunc = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/search-application-users",
+        "https://chat-sphere-6khc.onrender.com/api/search-application-users",
         { searchQuery: searchInput, userId: currentUser._id }
       );
 
@@ -50,7 +50,7 @@ const Sidebar = ({ openChatHandler }) => {
 
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/fetch-default-chats?sender=${sender}`
+        `https://chat-sphere-6khc.onrender.com/api/fetch-default-chats?sender=${sender}`
       );
       setDefaultChats(data);
       console.log(data);

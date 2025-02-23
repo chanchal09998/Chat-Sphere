@@ -30,11 +30,14 @@ const Signup = () => {
       setLoading(true); // Set loading state
 
       // Call the API to submit the form data
-      const response = await axios.post("http://localhost:8080/api/signup", {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://chat-sphere-6khc.onrender.com/api/signup",
+        {
+          name,
+          email,
+          password,
+        }
+      );
 
       // Handle the success response
       if (response.status === 201) {

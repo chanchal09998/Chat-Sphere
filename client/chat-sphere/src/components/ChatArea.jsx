@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 // Initialize socket connection
-const socket = io("http://localhost:8080");
+const socket = io("https://chat-sphere-6khc.onrender.com");
 
 const ChatArea = ({ selectedReceiver, setChatMessages, chatMessages }) => {
   console.log("selected receiver", selectedReceiver);
@@ -75,11 +75,14 @@ const ChatArea = ({ selectedReceiver, setChatMessages, chatMessages }) => {
     socket.emit("sendMessage", messageData);
 
     try {
-      await axios.post("http://localhost:8080/api/send-message", {
-        sender,
-        receiver: receiver._id,
-        message: sendMessage,
-      });
+      await axios.post(
+        "https://chat-sphere-6khc.onrender.com/api/send-message",
+        {
+          sender,
+          receiver: receiver._id,
+          message: sendMessage,
+        }
+      );
       setChatMessages((prev) => [...prev, messageData]);
       setSendMessage("");
       toast.success("Message sent");
@@ -109,11 +112,14 @@ const ChatArea = ({ selectedReceiver, setChatMessages, chatMessages }) => {
     socket.emit("sendGroupMessage", messageData);
 
     try {
-      await axios.post("http://localhost:8080/api/send-group-message", {
-        sender,
-        group: receiver._id,
-        message: sendMessage,
-      });
+      await axios.post(
+        "https://chat-sphere-6khc.onrender.com/api/send-group-message",
+        {
+          sender,
+          group: receiver._id,
+          message: sendMessage,
+        }
+      );
       setChatMessages((prev) => [...prev, messageData]);
       setSendMessage("");
       toast.success("Message sent");
