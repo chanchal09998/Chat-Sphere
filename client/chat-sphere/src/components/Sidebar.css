@@ -1,0 +1,111 @@
+/* Sidebar container */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode styles */
+.sidebar.light-mode {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+/* Dark mode styles */
+.sidebar.dark-mode {
+  background-color: #333;
+  color: #0dfa50;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  font-weight: bold;
+}
+
+/* Search Users */
+.search-users {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar.light-mode .search-users {
+  background-color: #fff;
+}
+
+.sidebar.dark-mode .search-users {
+  background-color: #444;
+}
+
+.search-name {
+  flex-grow: 1;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sidebar.dark-mode .search-name {
+  background-color: #555;
+  border: 1px solid #666;
+  color: #fff;
+}
+
+.cancel-icon {
+  font-size: 18px;
+  color: #999;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar.dark-mode .cancel-icon {
+  color: #bbb;
+}
+
+/* chhose-chats */
+.choose-chat span {
+  padding: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.choose-chat span:hover {
+  background: #000;
+  color: #fff;
+}
+/* Display Chats */
+.display-chats {
+  flex-grow: 1;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.sidebar.light-mode .display-chats {
+  background-color: #f9f9f9;
+}
+
+.sidebar.dark-mode .display-chats {
+  background-color: #222;
+}
+
+.display-chats::-webkit-scrollbar {
+  width: 5px;
+}
+
+.display-chats::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.sidebar.dark-mode .display-chats::-webkit-scrollbar-thumb {
+  background-color: #555;
+}

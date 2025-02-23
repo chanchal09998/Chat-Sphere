@@ -1,0 +1,140 @@
+/* Main Chatbox Container */
+.chatbox-container {
+  display: flex;
+  gap: 1px;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  font-family: "Arial", sans-serif;
+  box-sizing: border-box;
+  background: #ebe4e4;
+  position: relative;
+}
+
+/* Hamburger Container */
+.hamburger-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  height: 100%;
+  padding: 15px 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.hamburger-container .icon {
+  font-size: 28px;
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+.hamburger-container .logout {
+  margin-top: auto;
+}
+.hamburger-container .icon:hover {
+  color: teal;
+  transform: scale(1.2);
+}
+
+/* Sidebar on the Left */
+.left-sidebar-container {
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  box-sizing: border-box;
+}
+
+.left-sidebar-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.left-sidebar-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.left-sidebar-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Chat Area on the Right */
+.right-chat-area-container {
+  flex-grow: 1;
+  width: fit-content;
+  height: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.open {
+  width: 30%;
+}
+
+.close {
+  width: 0;
+}
+
+.logo-container img {
+  max-width: 100%; /* Prevents image overflow */
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+/* Dark Mode Styles */
+.chatbox-container.dark-mode {
+  background: #2c2c2c;
+  /* color: #0dfa50; */
+}
+
+.chatbox-container.dark-mode .hamburger-container {
+  background: #3a3a3a;
+}
+
+.chatbox-container.dark-mode .hamburger-container .icon {
+  color: #0dfa50;
+}
+
+.chatbox-container.dark-mode .hamburger-container .icon:hover {
+  color: #ffd700; /* Gold for better contrast */
+}
+
+/* .chatbox-container.dark-mode .left-sidebar-container {
+  background: #3a3a3a;
+  color: #f5f5f5;
+} */
+
+/* .chatbox-container.dark-mode .right-chat-area-container {
+  background: #444;
+  color: #f5f5f5;
+} */
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hamburger-container .icon {
+    font-size: 20px;
+  }
+  .left-sidebar-container.open {
+    width: 40%;
+    z-index: 100;
+  }
+  .logo-container img {
+    max-width: 40%; /* Prevents image overflow */
+    max-height: 40%;
+  }
+  .right-chat-area-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-sidebar-container.open {
+    width: 70% !important;
+    flex-shrink: 0;
+    z-index: 100;
+  }
+}

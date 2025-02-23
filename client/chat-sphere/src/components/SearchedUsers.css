@@ -1,0 +1,68 @@
+/* Main container for the chat item */
+.default-chat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Separator between chats */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Light mode styles */
+.default-chat.light-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+.default-chat.light-mode:hover {
+  background-color: #f5f5f5;
+}
+
+/* Dark mode styles */
+.default-chat.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.default-chat.dark-mode:hover {
+  background-color: #444;
+}
+
+/* Profile picture container */
+.profile-pic {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d9d9d9; /* Default placeholder background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #6e6e6e;
+  margin-right: 10px;
+}
+
+/* Name and message container */
+.name-and-message {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name-and-message p {
+  margin: 0;
+}
+
+.name-and-message p:first-child {
+  font-weight: bold;
+  font-size: 16px;
+  color: inherit;
+}
+
+/* Dark mode specific overrides for text and icons */
+.dark-mode .name-and-message p:first-child {
+  color: #fff; /* White text for name in dark mode */
+}

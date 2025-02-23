@@ -1,0 +1,32 @@
+# Ignore node modules
+node_modules/
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# System files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# Ignore build and deployment files
+.vercel/
+.netlify/
+output/
+
+# Ignore dependency locks (except package-lock.json or yarn.lock)
+pnpm-lock.yaml

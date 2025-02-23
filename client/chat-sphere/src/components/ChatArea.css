@@ -1,0 +1,215 @@
+/* Chat Area Container */
+.chat-area-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9; /* Light mode background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.chat-area-container.dark {
+  background-color: #2d2d2d; /* Dark mode background */
+  border: 1px solid #444;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-area-container.dark .user-info {
+  background-color: #1f1f1f;
+}
+
+.profile-icon {
+  font-size: 24px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.chat-area-container.dark .profile-icon {
+  color: #bbb;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.chat-area-container.dark .user-name {
+  color: #fff; /* Improved contrast */
+}
+
+/* Chat Area */
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 15px;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
+
+.chat-area-container.dark .chat-area {
+  background-color: #333;
+}
+
+/* Scrollbar Styling */
+.chat-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.chat-area::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+.chat-area-container.dark .chat-area::-webkit-scrollbar-thumb {
+  background-color: #777; /* Improved contrast */
+}
+
+.chat-area-container.dark .chat-area::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+/* Messages */
+.message {
+  max-width: 70%;
+  margin: 5px 0;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Received Messages */
+.message.received {
+  background-color: #ffffff;
+  align-self: flex-start;
+  border: 1px solid #ddd;
+}
+
+.chat-area-container.dark .message.received {
+  background-color: #f9f9f9;
+  border: 1px solid #0dfa50;
+  color: #000;
+}
+
+/* Sent Messages */
+.message.sent {
+  background-color: #007bff;
+  align-self: flex-end;
+  color: #ffffff;
+  border: 1px solid #007bff;
+}
+
+.chat-area-container.dark .message.sent {
+  background-color: #3998fd;
+  border: 1px solid #0056b3;
+}
+
+/* Sender Name */
+.sender-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: -10px;
+}
+
+/* Message Time */
+.message-time {
+  font-size: 10px;
+  color: #000;
+  text-align: right;
+  margin-top: -3px;
+}
+
+/* Send Message Container */
+.send-message-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+.chat-area-container.dark .send-message-container {
+  background-color: #1f1f1f;
+}
+
+/* Input Field */
+.message-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.chat-area-container.dark .message-input {
+  background-color: #444;
+  border: 1px solid #555;
+  color: #ddd;
+}
+
+.message-input:focus {
+  border-color: #007bff;
+}
+
+.chat-area-container.dark .message-input:focus {
+  border-color: #0dfa50;
+}
+
+/* Send Button */
+.send-button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.chat-area-container.dark .send-button {
+  background-color: #0dfa50;
+  color: #000;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+.chat-area-container.dark .send-button:hover {
+  background-color: #0c9a37;
+}
+
+@media screen and (max-width: 780px) {
+  .message {
+    max-width: 40%;
+  }
+}
