@@ -6,6 +6,7 @@ import CreateGroupComponent from "./CreateGroupComponent";
 import "./Home.css";
 
 const Home = () => {
+  // fetching user from cookies
   const user = Cookies.get("user") ? JSON.parse(Cookies.get("user")) : {};
   const [createGroup, setCreateGroup] = useState(false);
 
